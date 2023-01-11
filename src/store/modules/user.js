@@ -34,6 +34,8 @@ const actions = {
   },
   async logout({ commit }) {
     localStorage.removeItem("token");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("email");
     axios.defaults.headers.common["Authorization"] = null;
     const user = null;
     commit("logout", user);
